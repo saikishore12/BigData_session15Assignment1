@@ -1,0 +1,27 @@
+create database employee;
+
+create table employee1
+(
+name string,
+skill string,
+id int,
+city string
+)
+row format delimited
+fields terminated by ',';
+
+
+load data local inpath '/home/acadgild/Desktop/HIVE/emp_deatils.txt' into table employee1;
+
+
+Select skill, count(name) from employee1 group by skill;
+
+output:
+
+1  ASP
+2  Big Data
+1  C#
+1  DBA
+2  Jave
+1  Web TEchnology
+
